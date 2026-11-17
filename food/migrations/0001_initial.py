@@ -1,0 +1,5 @@
+from django.db import migrations,models
+class Migration(migrations.Migration):
+ initial=True
+ dependencies=[]
+ operations=[migrations.CreateModel(name='Restaurant',fields=[('id',models.BigAutoField(primary_key=True,serialize=False)),('name',models.CharField(max_length=180)),('kind',models.CharField(max_length=90)),('dish',models.TextField()),('hours',models.CharField(max_length=210)),('low',models.PositiveIntegerField()),('high',models.PositiveIntegerField()),('good',models.TextField()),('bad',models.TextField()),('zone',models.CharField(db_index=True,max_length=20)),('zoneLabel',models.CharField(max_length=130)),('verified',models.BooleanField(default=False)),('distance',models.CharField(blank=True,max_length=120)),('source',models.TextField(blank=True)),('data_status',models.CharField(blank=True,max_length=150)),('coverage',models.CharField(db_index=True,default='core',max_length=20))],options={'ordering':['id']}),migrations.AddIndex(model_name='restaurant',index=models.Index(fields=['zone','low'],name='food_zone_low_idx'))]
